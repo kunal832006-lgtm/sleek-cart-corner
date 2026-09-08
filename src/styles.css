@@ -59,10 +59,37 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* E-commerce pastel glass tokens */
+  --font-display: "Baloo 2", cursive, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-candy-pink: var(--candy-pink);
+  --color-candy-mint: var(--candy-mint);
+  --color-candy-peach: var(--candy-peach);
+  --color-candy-sky: var(--candy-sky);
+  --color-ink: var(--ink);
 }
 
 :root {
   --radius: 0.625rem;
+
+  /* Pastel e-commerce palette */
+  --brand: oklch(0.62 0.19 264);
+  --brand-dark: oklch(0.52 0.18 264);
+  --candy-pink: oklch(0.91 0.06 340);
+  --candy-mint: oklch(0.94 0.06 160);
+  --candy-peach: oklch(0.93 0.07 60);
+  --candy-sky: oklch(0.90 0.05 260);
+  --ink: oklch(0.25 0.05 270);
+
+  /* Page background gradient stops */
+  --page-start: oklch(0.95 0.02 260);
+  --page-mid: oklch(0.97 0.02 340);
+  --page-end: oklch(0.96 0.03 160);
+
+  /* Shadcn base tokens */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -142,3 +169,28 @@
     color: var(--color-foreground);
   }
 }
+
+/* Floaty ambient blobs */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+}
+
+@utility animate-floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+@utility page-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--page-start),
+    var(--page-mid),
+    var(--page-end)
+  );
+}
+
