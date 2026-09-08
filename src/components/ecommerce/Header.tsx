@@ -40,14 +40,9 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href="#products"
-            className="relative hidden items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand/30 transition-all hover:-translate-y-0.5 hover:bg-brand-dark sm:inline-flex"
+            className="hidden rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand/30 transition-all hover:-translate-y-0.5 hover:bg-brand-dark sm:inline-block"
           >
             Login
-            {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-candy-pink text-[10px] font-extrabold text-ink">
-                {cartCount}
-              </span>
-            )}
           </a>
           <button
             onClick={() => setMobileOpen((v) => !v)}
@@ -61,6 +56,7 @@ export function Header() {
             )}
           </button>
         </div>
+
       </div>
 
       {mobileOpen && (
