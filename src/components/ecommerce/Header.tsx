@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ShoppingBag } from "lucide-react";
-import { useCart } from "./CartProvider";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -11,7 +10,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { cartCount } = useCart();
+
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/50 bg-white/60 backdrop-blur-xl">
@@ -75,16 +74,11 @@ export function Header() {
             <a
               href="#products"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand/30"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand/30"
             >
-              <ShoppingBag className="size-4" />
               Login
-              {cartCount > 0 && (
-                <span className="grid size-5 place-items-center rounded-full bg-candy-pink text-[10px] font-extrabold text-ink">
-                  {cartCount}
-                </span>
-              )}
             </a>
+
           </nav>
         </div>
       )}
