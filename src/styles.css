@@ -184,3 +184,13 @@
 @utility animate-floaty {
   animation: floaty 7s ease-in-out infinite;
 }
+
+@utility page-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--page-start),
+    var(--page-mid),
+    var(--page-end)
+  );
+}
+

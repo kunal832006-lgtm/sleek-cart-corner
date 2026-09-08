@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <CartProvider>
-      <div className="min-h-screen bg-gradient-to-br from-[var(--page-start)] via-[var(--page-mid)] to-[var(--page-end)] font-body text-ink selection:bg-brand/20">
+      <div className="page-gradient min-h-screen font-body text-ink selection:bg-brand/20">
         <Header />
         <main className="mx-auto max-w-7xl px-5">
           <Hero />
